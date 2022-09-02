@@ -6,7 +6,7 @@ public class DAO_Implement implements AppDAO{
 
 	@Override
 	public void Agregar(ArrayList<Producto> DB, Producto x) {
-		// TODO Auto-generated method stub
+		System.out.println("Debug");
 		
 	}
 
