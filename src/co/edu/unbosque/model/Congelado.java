@@ -1,5 +1,16 @@
 package co.edu.unbosque.model;
 
-public class Congelado {
+public class Congelado extends Refrigerado{
+
+	public Congelado(String fechaVencimiento, String lote, String fechaEnvasado, String pais, String codInvima,
+			int temperatura) {
+		super(fechaVencimiento, lote, fechaEnvasado, pais, codInvima, temperatura);
+	}
+
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
 
 }
