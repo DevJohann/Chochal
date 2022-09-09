@@ -13,15 +13,17 @@ public class VistaPrincipal extends JFrame{
 	
 	public VistaPrincipal() {
 		
-		setSize(600, 500);
-		setLocationRelativeTo(null);
-		setVisible(true);
+		
 		getContentPane().setLayout(null);
-		//setLayout(null);
 		getContentPane().setBackground(Color.green);
 		setTitle("Tienda agroalimentos el chochal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		funcionar();
+		
+		setSize(600, 500);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setVisible(true);
 		
 	}
 	
