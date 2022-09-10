@@ -11,6 +11,10 @@ public class VistaPrincipal extends JFrame{
 	private PPublicidad pPublicidad;
 	private PBotones pBotones;
 	
+	//Paneles de acción (Respuesta a botones)
+	
+	private PAgregar1 pAgregar1;
+	
 	public VistaPrincipal() {
 		
 		
@@ -47,6 +51,13 @@ public class VistaPrincipal extends JFrame{
 		pBotones.setBounds(0, 415, 600, 85);
 		pBotones.setBackground(Color.BLACK);
 		getContentPane().add(pBotones);
+		
+		//Paneles de acción
+		
+		pAgregar1 = new PAgregar1();
+		pAgregar1.setBounds(100, 100, 200, 200);
+		pAgregar1.setBackground(Color.yellow);
+		getContentPane().add(pAgregar1);
 	}
 
 	public PTitulo getpTitulo() {

@@ -31,8 +31,8 @@ public class PTitulo extends JPanel{
 		setBackground(Color.BLACK);
 		tituloP = new JLabel("Agroalimentos el chochal");
 		tituloP.setForeground(Color.WHITE);
-		tituloP.setBounds(50, 10, 300, 50);
-		tituloP.setFont(new Font("CooperBlack", Font.BOLD, 20));
+		tituloP.setBounds(60, 10, 400, 50);
+		tituloP.setFont(new Font("Serif", Font.BOLD, 30));
 		add(tituloP);
 
 	}
