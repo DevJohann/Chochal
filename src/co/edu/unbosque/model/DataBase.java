@@ -13,20 +13,27 @@ public class DataBase implements AppDAO{
 	}
 
 	@Override
-	public Boolean Eliminar(String noLote) {
+	public String Eliminar(String noLote) {
+		String res = null;
 		for(Producto x : DataBase) {
 			if(x.getLote().equals(noLote)) {
 				DataBase.remove(x);
-				return true;
+				res = x.getClass().getSimpleName(); //Retornar el tipo para saber a cual producto restarle 1 en pProductos
+				return res;
+				//return true;
 			}
 		}
-		return false;
+		return res;
+		//return false;
 		
 	}
 
 	@Override
-	public void Modificar(String noLote) {
-		// TODO Auto-generated method stub
+	public void Modificar(Producto target, String fechaEnv, String fechaVen, String newLote, String newPais) {
+		target.setFechaEnvasado(fechaEnv);
+		target.setFechaVencimiento(fechaVen);
+		target.setLote(newLote);
+		target.setPais(newPais);
 		
 	}
 

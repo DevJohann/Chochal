@@ -83,30 +83,55 @@ public class PProductos extends JPanel{
 		return Integer.parseInt(LFrescosValue.getText());
 	}
 
-	public void setLFrescosValue(int x) {
-		int newValue = Integer.parseInt(LFrescosValue.getText()) + x;
-		String castedValue = newValue + "";
-		LFrescosValue.setText(castedValue);
+	public void setLFrescosValue(String operacion, int x) {
+		operacion = operacion.toLowerCase();
+		if(operacion.equals("sumar")) {
+			int newValue = Integer.parseInt(LFrescosValue.getText()) + x;
+			String castedValue = newValue + "";
+			LFrescosValue.setText(castedValue);
+		}
+		else {
+			int newValue = Integer.parseInt(LFrescosValue.getText()) - x;
+			String castedValue = newValue + "";
+			LFrescosValue.setText(castedValue);
+		}
+		
 	}
 
 	public int getLRefrigeradosValue() {
 		return Integer.parseInt(LRefrigeradosValue.getText());
 	}
 
-	public void setLRefrigeradosValue(int x) {
-		int newValue = Integer.parseInt(LRefrigeradosValue.getText()) + x;
-		String castedValue = newValue + "";
-		LRefrigeradosValue.setText(castedValue);
+	public void setLRefrigeradosValue(String operacion, int x) {
+		operacion = operacion.toLowerCase();
+		if(operacion.equals("sumar")) {
+			int newValue = Integer.parseInt(LRefrigeradosValue.getText()) + x;
+			String castedValue = newValue + "";
+			LRefrigeradosValue.setText(castedValue);
+		}
+		else {
+			int newValue = Integer.parseInt(LRefrigeradosValue.getText()) - x;
+			String castedValue = newValue + "";
+			LRefrigeradosValue.setText(castedValue);
+		}
 	}
 
 	public int getLCongeladosValue() {
 		return Integer.parseInt(LCongeladosValue.getText());
 	}
 
-	public void setLCongeladosValue(int x) {
-		int newValue = Integer.parseInt(LCongeladosValue.getText()) + x;
-		String castedValue = newValue + "";
-		LCongeladosValue.setText(castedValue);
+	public void setLCongeladosValue(String operacion, int x) {
+		operacion = operacion.toLowerCase();
+		if(operacion.equals("sumar")) {
+			int newValue = Integer.parseInt(LCongeladosValue.getText()) + x;
+			String castedValue = newValue + "";
+			LCongeladosValue.setText(castedValue);
+		}
+		else {
+			int newValue = Integer.parseInt(LCongeladosValue.getText()) - x;
+			String castedValue = newValue + "";
+			LCongeladosValue.setText(castedValue);
+		}
 	}
 
 }

@@ -2,6 +2,9 @@ package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
+import java.util.Locale;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.CongeladoAgua;
@@ -14,7 +17,7 @@ import co.edu.unbosque.model.Refrigerado;
 import co.edu.unbosque.view.VistaPrincipal;
 import co.edu.unbosque.view.VistaVentana;
 
-public class Controller implements ActionListener {
+public class Controller implements ActionListener{
 	
 	VistaPrincipal vistaPrincipal; //JFrame
 	VistaVentana VV; //Ventana emergente
@@ -66,6 +69,9 @@ public class Controller implements ActionListener {
 				switch(opcionCongelado) {
 				case "agua":
 					var_a = VV.leerString("Fecha de vencimiento del producto");
+					//var_a = "07-Jun-2022";
+					//SimpleDateFormat fechaFormatter = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH); DEBUG
+					//Date fecha = fechaFormatter.parse(var_a);
 					var_b = VV.leerString("Lote del producto");
 					check = DB.BuscarPorLote(var_b);
 					if(check != null) { //Chequear si el lote ya existe, si check no es igual a null es porque la base de datos retornó un resultado en la búsqueda (por lote)
@@ -81,7 +87,7 @@ public class Controller implements ActionListener {
 						//Crear y guardar el producto en la base de datos
 						CongeladoAgua congeladoAgua = new CongeladoAgua(var_a, var_b, var_c, var_d, var_f, var_g, var_h);
 						DB.Agregar(congeladoAgua);
-						vistaPrincipal.getpProductos().setLCongeladosValue(1); //Sumarle 1 al valor del respectivo producto en pProductos
+						vistaPrincipal.getpProductos().setLCongeladosValue("sumar", 1); //Sumarle 1 al valor del respectivo producto en pProductos
 						VV.mostrarInfo(congeladoAgua.toString() + "\n¡Datos guardados!");
 						break;
 					}
@@ -105,7 +111,7 @@ public class Controller implements ActionListener {
 						
 						CongeladoAire congeladoAire = new CongeladoAire(var_a, var_b, var_c, var_d, var_f, var_g, var_h, var_i, var_j, var_k);
 						DB.Agregar(congeladoAire);
-						vistaPrincipal.getpProductos().setLCongeladosValue(1);
+						vistaPrincipal.getpProductos().setLCongeladosValue("sumar", 1);
 						VV.mostrarInfo(congeladoAire.toString() + "\n¡Datos guardados!");
 						break;
 					}
@@ -126,7 +132,7 @@ public class Controller implements ActionListener {
 						
 						CongeladoNitrogeno congeladoNitrogeno = new CongeladoNitrogeno(var_a, var_b, var_c, var_d, var_f, var_g, var_h, var_i);
 						DB.Agregar(congeladoNitrogeno);
-						vistaPrincipal.getpProductos().setLCongeladosValue(1);
+						vistaPrincipal.getpProductos().setLCongeladosValue("sumar", 1);
 						VV.mostrarInfo(congeladoNitrogeno.toString() + "\n¡Datos guardados!");
 						break;
 					}
@@ -150,7 +156,7 @@ public class Controller implements ActionListener {
 					
 					Fresco fresco = new Fresco(var_a, var_b, var_c, var_d);
 					DB.Agregar(fresco);
-					vistaPrincipal.getpProductos().setLFrescosValue(1);
+					vistaPrincipal.getpProductos().setLFrescosValue("sumar", 1);
 					VV.mostrarInfo(fresco.toString() + "\n¡Datos guardados!");
 					break;
 				}
@@ -169,7 +175,7 @@ public class Controller implements ActionListener {
 					
 					Refrigerado refrigerado = new Refrigerado(var_a, var_b, var_c, var_d, var_f, var_g);
 					DB.Agregar(refrigerado);
-					vistaPrincipal.getpProductos().setLRefrigeradosValue(1);
+					vistaPrincipal.getpProductos().setLRefrigeradosValue("sumar", 1);
 					VV.mostrarInfo(refrigerado.toString() + "\n¡Datos guardados!");
 					break;
 				}
@@ -186,17 +192,40 @@ public class Controller implements ActionListener {
 			
 		case "Eliminar":
 			String res = VV.leerString("Qué producto desea eliminar (por numero de lote)");
-			Boolean resDB = DB.Eliminar(res);
-			if(resDB == true) {
+			String resDB = DB.Eliminar(res);
+			resDB = resDB.toLowerCase();
+			System.out.println(resDB);
+			switch(resDB) {
+			case "congelado", "congeladoagua", "congeladoaire", "congeladonitrogeno":
+				vistaPrincipal.getpProductos().setLCongeladosValue("resta", 1);
 				VV.mostrarInfo("Eliminado correctamente");
+				break;
+			case "fresco":
+				vistaPrincipal.getpProductos().setLFrescosValue("resta", 1);
+				VV.mostrarInfo("Eliminado correctamente");
+				break;
+			case "refrigerado":
+				vistaPrincipal.getpProductos().setLRefrigeradosValue("resta", 1);
+				VV.mostrarInfo("Eliminado correctamente");
+				break;
 			}
-			else {
-				VV.mostrarInfo("No se encontró el producto");
-			}
+			
 			break;
 		case "Modificar":
-			VV.leerString("Qué producto desea modificar (por numero de lote)");
-			break;
+			String x = VV.leerString("Qué producto desea modificar (por numero de lote)");
+			Producto target = DB.BuscarPorLote(x);
+			if(target != null) {
+				VV.mostrarInfo("Por favor ingrese los nuevos valores");
+				String fechaEnv = VV.leerString("Fecha nueva de envasado:");
+				String fechaVen = VV.leerString("Fecha nueva de vencimiento:");
+				String newLote = VV.leerString("Nuevo lote:");
+				String newPais = VV.leerString("Nuevo país:");
+				DB.Modificar(target, fechaEnv, fechaVen, newLote, newPais);
+				break;
+			}else {
+				VV.mostrarInfo("No se encontró el producto");
+				break;
+			}
 		case "Buscar":
 			String nLote = "";
 			String fVencimiento = "";
@@ -225,8 +254,8 @@ public class Controller implements ActionListener {
 					break;
 				}else {
 					VV.mostrarInfo("Se encontraron varios productos");
-					for(Producto x : responseArray) { //Mostrar el toString de producto por producto
-						VV.mostrarInfo(x.toString());
+					for(Producto y : responseArray) { //Mostrar el toString de producto por producto
+						VV.mostrarInfo(y.toString());
 					}
 					break;
 				}
@@ -239,7 +268,7 @@ public class Controller implements ActionListener {
 			}
 			break;
 		case "Salir":
-			VV.mostrarInfo("Hasta la próxima :(");
+			VV.mostrarInfo("Software realizado por:\nAndrés Beltrán\nMauricio Beltrán\nJohann Toncon");
 			System.exit(0);
 			break;
 		}
