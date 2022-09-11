@@ -2,13 +2,13 @@ package co.edu.unbosque.model;
 
 public class CongeladoAire extends Congelado{
 	
-	private int porcentajeNitrogeno; 
-	private int porcentajeOxigeno;
-	private int porcentajeCO2;
-	private int porcentajeVaporAgua;
+	private String porcentajeNitrogeno; 
+	private String porcentajeOxigeno;
+	private String porcentajeCO2;
+	private String porcentajeVaporAgua;
 
 	public CongeladoAire(String fechaVencimiento, String lote, String fechaEnvasado, String pais, String codInvima,
-			int temperatura, int porcentajeNitrogeno, int porcentajeOxigeno, int porcentajeCO2, int porcentajeVaporAgua) {
+			String temperatura, String porcentajeNitrogeno, String porcentajeOxigeno, String porcentajeCO2, String porcentajeVaporAgua) {
 		super(fechaVencimiento, lote, fechaEnvasado, pais, codInvima, temperatura);
 		this.porcentajeNitrogeno = porcentajeNitrogeno;
 		this.porcentajeOxigeno = porcentajeOxigeno;
@@ -16,35 +16,35 @@ public class CongeladoAire extends Congelado{
 		this.porcentajeVaporAgua = porcentajeVaporAgua;
 	}
 
-	public int getPorcentajeNitrogeno() {
+	public String getPorcentajeNitrogeno() {
 		return porcentajeNitrogeno;
 	}
 
-	public void setPorcentajeNitrogeno(int porcentajeNitrogeno) {
+	public void setPorcentajeNitrogeno(String porcentajeNitrogeno) {
 		this.porcentajeNitrogeno = porcentajeNitrogeno;
 	}
 
-	public int getPorcentajeOxigeno() {
+	public String getPorcentajeOxigeno() {
 		return porcentajeOxigeno;
 	}
 
-	public void setPorcentajeOxigeno(int porcentajeOxigeno) {
+	public void setPorcentajeOxigeno(String porcentajeOxigeno) {
 		this.porcentajeOxigeno = porcentajeOxigeno;
 	}
 
-	public int getPorcentajeCO2() {
+	public String getPorcentajeCO2() {
 		return porcentajeCO2;
 	}
 
-	public void setPorcentajeCO2(int porcentajeCO2) {
+	public void setPorcentajeCO2(String porcentajeCO2) {
 		this.porcentajeCO2 = porcentajeCO2;
 	}
 
-	public int getPorcentajeVaporAgua() {
+	public String getPorcentajeVaporAgua() {
 		return porcentajeVaporAgua;
 	}
 
-	public void setPorcentajeVaporAgua(int porcentajeVaporAgua) {
+	public void setPorcentajeVaporAgua(String porcentajeVaporAgua) {
 		this.porcentajeVaporAgua = porcentajeVaporAgua;
 	}
 
@@ -52,9 +52,9 @@ public class CongeladoAire extends Congelado{
 	public String toString() {
 		return super.toString() +
 				"\nPorcentaje de nitrogeno: " + porcentajeNitrogeno + 
-				"\nporcentaje de oxigeno: " + porcentajeOxigeno + 
-				"\nporcentaje de CO2: " + porcentajeCO2 + 
-				"\nporcentaje vapor de agua: " + porcentajeVaporAgua;
+				"\nPorcentaje de oxigeno: " + porcentajeOxigeno + 
+				"\nPorcentaje de CO2: " + porcentajeCO2 + 
+				"\nPorcentaje vapor de agua: " + porcentajeVaporAgua;
 	}
 
 }

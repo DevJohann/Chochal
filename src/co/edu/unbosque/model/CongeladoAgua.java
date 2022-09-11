@@ -2,27 +2,27 @@ package co.edu.unbosque.model;
 
 public class CongeladoAgua extends Congelado{
 	
-	private int salinidadAgua;
+	private String salinidadAgua;
 
 	
 	public CongeladoAgua(String fechaVencimiento, String lote, String fechaEnvasado, String pais, String codInvima,
-			int temperatura, int salinidadAgua) {
+			String temperatura, String salinidadAgua) {
 		super(fechaVencimiento, lote, fechaEnvasado, pais, codInvima, temperatura);
 		this.salinidadAgua = salinidadAgua;
 	}
 
-	public int getSalinidadAgua() {
+	public String getSalinidadAgua() {
 		return salinidadAgua;
 	}
 
-	public void setSalinidadAgua(int salinidadAgua) {
+	public void setSalinidadAgua(String salinidadAgua) {
 		this.salinidadAgua = salinidadAgua;
 	}
 
 	@Override
 	public String toString() {
 		return super.toString() + 
-				"\nSalinidad de agua: " + salinidadAgua;
+				"\nSalinidad del agua: " + salinidadAgua;
 	}
 	
 

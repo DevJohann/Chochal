@@ -49,9 +49,9 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Fecha de vencimiento: " + fechaVencimiento + 
-				"\nlote: " + lote + 
-				"\nfechaEnvasado: " + fechaEnvasado + 
-				"\npais: " + pais;
+				"\nLote: " + lote + 
+				"\nFecha de envasado: " + fechaEnvasado + 
+				"\nPais: " + pais;
 	}
 
 }

@@ -3,10 +3,10 @@ package co.edu.unbosque.model;
 public class Refrigerado extends Producto{
 	
 	protected String codInvima;
-	protected int temperatura;
+	protected String temperatura;
 
 	public Refrigerado(String fechaVencimiento, String lote, String fechaEnvasado, 
-			String pais, String codInvima, int temperatura) {
+			String pais, String codInvima, String temperatura) {
 		super(fechaVencimiento, lote, fechaEnvasado, pais);
 		this.codInvima = codInvima;
 		this.temperatura = temperatura;
@@ -20,18 +20,18 @@ public class Refrigerado extends Producto{
 		this.codInvima = codInvima;
 	}
 
-	public int getTemperatura() {
+	public String getTemperatura() {
 		return temperatura;
 	}
 
-	public void setTemperatura(int temperatura) {
+	public void setTemperatura(String temperatura) {
 		this.temperatura = temperatura;
 	}
 
 	@Override
 	public String toString() {
 		return super.toString() + "\nCodigo Invima: " + codInvima + 
-				"\ntemperatura:" + temperatura; 
+				"\nTemperatura: " + temperatura; 
 				
 	}
 

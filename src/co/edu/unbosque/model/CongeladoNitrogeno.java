@@ -3,10 +3,10 @@ package co.edu.unbosque.model;
 public class CongeladoNitrogeno extends Congelado{
 	
 	private String metodoCongelacion;
-	private int tiempoExposicionNitrogeno;
+	private String tiempoExposicionNitrogeno;
 
 	public CongeladoNitrogeno(String fechaVencimiento, String lote, String fechaEnvasado, String pais, String codInvima,
-			int temperatura, String metodoCongelacion, int tiempoExposicionNitrogeno) {
+			String temperatura, String metodoCongelacion, String tiempoExposicionNitrogeno) {
 		super(fechaVencimiento, lote, fechaEnvasado, pais, codInvima, temperatura);
 		this.metodoCongelacion = metodoCongelacion;
 		this.tiempoExposicionNitrogeno = tiempoExposicionNitrogeno;
@@ -20,11 +20,11 @@ public class CongeladoNitrogeno extends Congelado{
 		this.metodoCongelacion = metodoCongelacion;
 	}
 
-	public int getTiempoExposicionNitrogeno() {
+	public String getTiempoExposicionNitrogeno() {
 		return tiempoExposicionNitrogeno;
 	}
 
-	public void setTiempoExposicionNitrogeno(int tiempoExposicionNitrogeno) {
+	public void setTiempoExposicionNitrogeno(String tiempoExposicionNitrogeno) {
 		this.tiempoExposicionNitrogeno = tiempoExposicionNitrogeno;
 	}
 
