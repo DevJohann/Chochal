@@ -79,28 +79,34 @@ public class PProductos extends JPanel{
 	
 	//Getters y setters de sólo los value
 
-	public JLabel getLFrescosValue() {
-		return LFrescosValue;
+	public int getLFrescosValue() {
+		return Integer.parseInt(LFrescosValue.getText());
 	}
 
-	public void setLFrescosValue(JLabel lFrescosValue) {
-		LFrescosValue = lFrescosValue;
+	public void setLFrescosValue(int x) {
+		int newValue = Integer.parseInt(LFrescosValue.getText()) + x;
+		String castedValue = newValue + "";
+		LFrescosValue.setText(castedValue);
 	}
 
-	public JLabel getLRefrigeradosValue() {
-		return LRefrigeradosValue;
+	public int getLRefrigeradosValue() {
+		return Integer.parseInt(LRefrigeradosValue.getText());
 	}
 
-	public void setLRefrigeradosValue(JLabel lRefrigeradosValue) {
-		LRefrigeradosValue = lRefrigeradosValue;
+	public void setLRefrigeradosValue(int x) {
+		int newValue = Integer.parseInt(LRefrigeradosValue.getText()) + x;
+		String castedValue = newValue + "";
+		LRefrigeradosValue.setText(castedValue);
 	}
 
-	public JLabel getLCongeladosValue() {
-		return LCongeladosValue;
+	public int getLCongeladosValue() {
+		return Integer.parseInt(LCongeladosValue.getText());
 	}
 
-	public void setLCongeladosValue(JLabel lCongeladosValue) {
-		LCongeladosValue = lCongeladosValue;
+	public void setLCongeladosValue(int x) {
+		int newValue = Integer.parseInt(LCongeladosValue.getText()) + x;
+		String castedValue = newValue + "";
+		LCongeladosValue.setText(castedValue);
 	}
 
 }

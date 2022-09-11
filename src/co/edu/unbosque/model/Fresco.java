@@ -8,7 +8,7 @@ public class Fresco extends Producto{
 
 	@Override
 	public String toString() {
-		return super.toString();
+		return super.toString() + "\nCategoría: Fresco";
 	}
 
 	

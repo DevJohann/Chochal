@@ -32,7 +32,8 @@ public class CongeladoNitrogeno extends Congelado{
 	public String toString() {
 		return super.toString() + 
 				"\nMétodo Congelacion: " + metodoCongelacion + 
-				"\ntiempo de exposicion de nitrogeno: " + tiempoExposicionNitrogeno;
+				"\ntiempo de exposicion de nitrógeno: " + tiempoExposicionNitrogeno +
+				"\nSubcategoría: Congelado nitrógeno";
 	}
 
 }

@@ -22,7 +22,8 @@ public class CongeladoAgua extends Congelado{
 	@Override
 	public String toString() {
 		return super.toString() + 
-				"\nSalinidad del agua: " + salinidadAgua;
+				"\nSalinidad del agua: " + salinidadAgua +
+				"\nSubcategoría: Congelado agua";
 	}
 	
 

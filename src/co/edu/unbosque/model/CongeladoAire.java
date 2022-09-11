@@ -54,7 +54,8 @@ public class CongeladoAire extends Congelado{
 				"\nPorcentaje de nitrogeno: " + porcentajeNitrogeno + 
 				"\nPorcentaje de oxigeno: " + porcentajeOxigeno + 
 				"\nPorcentaje de CO2: " + porcentajeCO2 + 
-				"\nPorcentaje vapor de agua: " + porcentajeVaporAgua;
+				"\nPorcentaje vapor de agua: " + porcentajeVaporAgua +
+				"\nSubcategoría: Congelado aire";
 	}
 
 }

@@ -15,8 +15,18 @@ public class VistaVentana {//Clase de herramientas JOptionPane
 	
 	//Método para pedir datos tipo String
 	public String leerString(String mensaje) {
-		String dato = JOptionPane.showInputDialog(mensaje);
+		String dato = null;
+		try {
+			dato = JOptionPane.showInputDialog(mensaje);
+			dato = dato.toLowerCase(); //Para poderlo analizar sin tener en cuenta cómo lo haya escrito el usuario
+		}catch(NullPointerException e) {
+			return dato;
+		}
 		return dato;
+		
+		
+		
+
 	}
 	
 	//Método para pedir datos tipo int

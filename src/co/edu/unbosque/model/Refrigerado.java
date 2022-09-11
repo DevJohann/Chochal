@@ -31,7 +31,8 @@ public class Refrigerado extends Producto{
 	@Override
 	public String toString() {
 		return super.toString() + "\nCodigo Invima: " + codInvima + 
-				"\nTemperatura: " + temperatura; 
+				"\nTemperatura: " + temperatura + 
+				"\nCategoría: Refrigerado"; 
 				
 	}
 
