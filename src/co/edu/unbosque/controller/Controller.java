@@ -24,11 +24,11 @@ import co.edu.unbosque.view.VistaVentana;
  * lo que son los listeners de los botones (del JFrame y de los JPanels)
  * mediante ActionListener.
  * 
- * <b>Notas:</b> Están presentes objetos de las clases: VistaPrincipal
+ * <b>Notas:</b> Estan presentes objetos de las clases: VistaPrincipal
  * (vistaPrincipal), VistaVentana (VV), DataBase (DB).
  * Cabe aclarar que la que llamamos DB es una base de datos local y
  * sencilla que almacena datos en un ArrayList.
- * VistaPrincipal contiene el JFrame en donde se ubican los demás paneles.
+ * VistaPrincipal contiene el JFrame en donde se ubican los demas paneles.
  * VistaVentana es la clase de donde se coordinan las ventanas emergentes.
  * 
  * @author CryptedSec Team
@@ -44,7 +44,7 @@ public class Controller implements ActionListener{
 	DataBase DB; //Base de datos, donde está el ArrayList que almacena los productos
 	
 	/**
-	 * Usamos el constructor para instanciar las clases que serán
+	 * Usamos el constructor para instanciar las clases que seran
 	 * necesarias para el manejo del GUI y la base de datos.
 	 * 
 	 */
@@ -58,7 +58,7 @@ public class Controller implements ActionListener{
 	}
 	
 	/**
-	 * Este método lo que hace es agregar los ActionListener a cada
+	 * Este metodo lo que hace es agregar los ActionListener a cada
 	 * uno de los botones del panel PBotones del paquete vista,
 	 * gracias al objeto de vistaPrincipal.
 	 * 
@@ -75,62 +75,62 @@ public class Controller implements ActionListener{
 	/**
 	 * actionPerformed
 	 * 
-	 * Sobrescribimos el método actionPerformed que viene de la interfaz
-	 * de ActionListener, dentro del cual se analiza cuál de todos los botones
-	 * fue presionado y así poder mandar a actuar al modelo según sea necesario.
-	 * Es necesario aclarar que cada botón de pBotones tiene un ActionCommand 
+	 * Sobrescribimos el metodo actionPerformed que viene de la interfaz
+	 * de ActionListener, dentro del cual se analiza cual de todos los botones
+	 * fue presionado y asi poder mandar a actuar al modelo segun sea necesario.
+	 * Es necesario aclarar que cada boton de pBotones tiene un ActionCommand 
 	 * asignado, con lo que nos podemos valer para saber distinguir entre uno
 	 * y otro (e.getActionCommand).
 	 * 
 	 * <b>Notas:</b>
 	 * Usamos el manejo de excepciones para cuando por ejemplo, el usuario decide
-	 * no continuar con el proceso luego de haber presionando un botón, presionando
+	 * no continuar con el proceso luego de haber presionando un boton, presionando
 	 * cancelar en la ventana emergente.
 	 * Las variables "var_*" son usadas para almacenar los datos recogidos en las 
 	 * ventanas emergentes. 
-	 * Hay switch dentro de otros switch debido a que luego de presionar un botón,
+	 * Hay switch dentro de otros switch debido a que luego de presionar un boton,
 	 * hay varias opciones disponibles, por ejemplo luego de elegir agregar, debemos
 	 * saber cual producto de los antes mencionados quiere agregar.
 	 * 
 	 * <p><ul>
 	 *	<li>
-	 * Botón agregar:
-	 * En el apartado del botón agregar, para cada uno de los productos, se recogen
-	 * los datos pertinentes para la creación del mismo, se valida que el lote no
-	 * esté repetido, se crea el objeto y se añade a la base de datos, y posteriormente
+	 * Boton agregar:
+	 * En el apartado del boton agregar, para cada uno de los productos, se recogen
+	 * los datos pertinentes para la creacion del mismo, se valida que el lote no
+	 * este repetido, se crea el objeto y se añade a la base de datos, y posteriormente
 	 * se suma 1 al valor que se muestra en la ventana principal (pProductos) del
 	 * respectivo producto.
 	 * </li>
 	 * <li>
 	 * Boton eliminar:
-	 * En el apartado del botón de eliminar, se busca el producto a eliminar mediante
-	 * el lote único, y en tal caso de no encontrarse, se lanza la excepción y se muestra
+	 * En el apartado del boton de eliminar, se busca el producto a eliminar mediante
+	 * el lote unico, y en tal caso de no encontrarse, se lanza la excepcion y se muestra
 	 * el mensaje de error, igual al presionar cancelar o ingresar caracteres no esperados.
-	 * Si el producto existe, se ubicará en la base de datos y se eliminará, gracias a las
-	 * acciones de la base de datos implementadas desde el DAO (Patrón DAO).
+	 * Si el producto existe, se ubicara en la base de datos y se eliminara, gracias a las
+	 * acciones de la base de datos implementadas desde el DAO (Patron DAO).
 	 * </li>
 	 * <li>
-	 * Botón modificar:
-	 * Se ubicará el producto a buscar, y si existe, se le preguntará por los nuevos datos para
-	 * remplazar, si no, o si se ingresan caracteres no esperados, mostrará que no se encontró
+	 * Boton modificar:
+	 * Se ubicara el producto a buscar, y si existe, se le preguntara por los nuevos datos para
+	 * remplazar, si no, o si se ingresan caracteres no esperados, mostrara que no se encontro
 	 * el producto.
 	 * </li>
 	 * <li>  
-	 * Botón buscar:
+	 * Boton buscar:
 	 * Para buscar un producto se tienen dos opciones, por lote o por fecha de vencimiento. En los
-	 * dos casos, se buscará el producto objetivo en la base de datos, y si existe, se mostrará
-	 * el método toString() del producto. Si no existe (la base de datos retorna null), entonces
-	 * se muestra el mensaje de que no se encontró el producto.
-	 * Para el caso de buscar por fecha de vencimiento, hay la probabilidad de que se encuentre más
+	 * dos casos, se buscara el producto objetivo en la base de datos, y si existe, se mostrara
+	 * el metodo toString() del producto. Si no existe (la base de datos retorna null), entonces
+	 * se muestra el mensaje de que no se encontro el producto.
+	 * Para el caso de buscar por fecha de vencimiento, hay la probabilidad de que se encuentre mas
 	 * de un producto, para ello se guardan todas las coincidencias que encuentre la base de datos
-	 * en un ArrayList, y posteriormente, mediante un for each, se mostrará el toString() de cada uno.
+	 * en un ArrayList, y posteriormente, mediante un for each, se mostrara el toString() de cada uno.
 	 * </li> 
 	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		switch(e.getActionCommand()) { //Cada botón tiene un ActionCommand configurado
+		switch(e.getActionCommand()) { //Cada boton tiene un ActionCommand configurado
 		case "Agregar":
 			String dato = VV.leerString("Agregar producto congelado, fresco o refrigerado");
 			//System.out.println(dato); DEBUG
@@ -138,7 +138,7 @@ public class Controller implements ActionListener{
 			String var_b = "";
 			String var_c = "";
 			String var_d = "";
-			String var_f = ""; //Variables que recogerán el valor de los text fields de las ventanas emergentes
+			String var_f = ""; //Variables que recogeran el valor de los text fields de las ventanas emergentes
 			String var_g = "";
 			String var_h = "";
 			String var_i = "";
@@ -162,7 +162,7 @@ public class Controller implements ActionListener{
 					if(check != null) { //Chequear si el lote ya existe, si check no es igual a null es porque la base de datos retornó un resultado en la búsqueda (por lote)
 						VV.mostrarInfo("Error, ese lote ya existe");
 						break;
-					}else { //Si no está duplicado, continuar
+					}else { //Si no esta duplicado, continuar
 						var_c = VV.leerString("Fecha envasado");
 						var_d = VV.leerString("Pais");
 						var_f = VV.leerString("Codigo INVIMA");
@@ -335,10 +335,10 @@ public class Controller implements ActionListener{
 					VV.mostrarInfo(response.toString());
 					break;
 				}
-			case "fecha": //Fecha podría retornar más de un elemento
+			case "fecha": //Fecha podria retornar mas de un elemento
 				fVencimiento = VV.leerString("Cuál es la fecha de vencimiento del producto");
 				ArrayList<Producto> responseArray = DB.BuscarPorFecha(fVencimiento);
-				if(responseArray.size() == 0) { //Si el array llegó vacío, es porque no encontró nada en la base de datos
+				if(responseArray.size() == 0) { //Si el array llego vacio, es porque no encontro nada en la base de datos
 					VV.mostrarInfo("Lo sentimos, no encontramos el producto");
 					break;
 				}else {

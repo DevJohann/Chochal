@@ -2,9 +2,9 @@ package co.edu.unbosque.controller;
 
 /**
  * 
- * <h1><b>¡Agroalimentos El Chochal!</b></h1>
+ * <h1><b>Agroalimentos El Chochal</b></h1>
  * Un software hecho para la administracion de productos
- * de la tienda, divididos en 3 categorías: Congelados,
+ * de la tienda, divididos en 3 categorias: Congelados,
  * frescos y refrigerados.
  * Presenta 5 botones con funcionalidades utiles para 
  * el que este encargado de la tarea, al presionar alguno
@@ -13,22 +13,22 @@ package co.edu.unbosque.controller;
  * <p>
  * <b>Notas:</b> 
  * El programa ingresa productos uno por
- * uno, así que es práctico para inventarios no muy
+ * uno, asi que es practico para inventarios no muy
  * grandes.
  * El programa no cuenta con una base de datos persistente,
- * por lo que cerrar el programa eliminará la información
+ * por lo que cerrar el programa eliminara la informacion
  * guardada.
- * La modificación de productos sólo se puede hacer con
+ * La modificacion de productos solo se puede hacer con
  * algunas de sus propiedades.
- * Cada producto ingresado debe tener un único número de lote.
- * Se intentó poner las fechas con formato, pero debido a la
- * complejidad se resolvió hacerlo con Strings.
- * Se intentó realizar la organización del GUI con layouts, 
+ * Cada producto ingresado debe tener un unico numero de lote.
+ * Se intento poner las fechas con formato, pero debido a la
+ * complejidad se resolvio hacerlo con Strings.
+ * Se intento realizar la organizacion del GUI con layouts, 
  * pero debido a su complejidad y nuestro poco conocimiento del
  * tema, determinamos hacerlo con setBounds.
  * </p>
  * 
- * @author CryptedSec Team (Mauricio Beltrán, Andrés Beltrán, Johann Toncon)
+ * @author CryptedSec Team (Mauricio Beltran, Andres Beltran, Johann Toncon)
  * @version 1.0
  *
  */
@@ -37,7 +37,7 @@ public class AplMain {
 	
 	/**
 	 * <p>
-	 * Punto de entrada a la aplicación, usado para
+	 * Punto de entrada a la aplicacion, usado para
 	 * crear una nueva instancia de Controller.
 	 * </p>
 	 * 

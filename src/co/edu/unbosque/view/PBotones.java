@@ -5,7 +5,7 @@ import javax.swing.*;
 /**
  * <h2>PBotones</h2>
  * Esta clase es el panel que contiene los botones.
- * Cada uno de ellos está instanciado y configurado dentro de funcionar(). 
+ * Cada uno de ellos esta instanciado y configurado dentro de funcionar(). 
  * @author CryptedSec Team
  *
  */
@@ -20,7 +20,7 @@ public class PBotones extends JPanel{
 	
 	public PBotones() {
 		
-		//Configuración del JPanel
+		//Configuracion del JPanel
 		setLayout(null);
 		funcionar();
 		setVisible(true);
@@ -29,7 +29,7 @@ public class PBotones extends JPanel{
 	
 	public void funcionar() {
 		
-		//Configuración de botones
+		//Configuracion de botones
 		bAgregar = new JButton("Agregar");
 		bAgregar.setBounds(30, 10, 80, 20);
 		bAgregar.setActionCommand("Agregar");

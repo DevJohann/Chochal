@@ -10,7 +10,7 @@ import javax.swing.border.TitledBorder;
 
 /**
  * 
- * @author Mauricio Beltrán
+ * @author Mauricio Beltran
  *
  */
 

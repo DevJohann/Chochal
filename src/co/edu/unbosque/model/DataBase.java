@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * <h2>DataBase</h2>
  * La base de datos es un ArrayList que almacena los productos.
- * Tiene funcionalidades implementadas del AppDAO (Interfaces, abstracción y sobrescritura).
+ * Tiene funcionalidades implementadas del AppDAO (Interfaces, abstraccion y sobrescritura).
  * @author CryptedSec Team
  *
  */

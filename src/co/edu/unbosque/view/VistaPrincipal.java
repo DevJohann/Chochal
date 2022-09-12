@@ -6,9 +6,9 @@ import javax.swing.JFrame;
 
 /**
  * <h2>VistaPrincipal</h2>
- * Este es el JFrame de la aplicación, la base de los paneles.
- * Aquí se intancian y se configuran los paneles, con sus elementos ya ubicados.
- * @author Mauricio Beltrán
+ * Este es el JFrame de la aplicacion, la base de los paneles.
+ * Aqui se intancian y se configuran los paneles, con sus elementos ya ubicados.
+ * @author Mauricio Beltran
  *
  */
 public class VistaPrincipal extends JFrame{

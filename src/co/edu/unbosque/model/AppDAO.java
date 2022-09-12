@@ -5,13 +5,13 @@ import java.util.ArrayList;
 /**
  * <h2>AppDAO</h2>
  * <p>
- * Haciendo uso del patrón DAO, creamos una interfaz con todas las
- * funcionalidades que tendrá la base de datos, mencionadas en el
+ * Haciendo uso del patron DAO, creamos una interfaz con todas las
+ * funcionalidades que tendra la base de datos, mencionadas en el
  * documento de requerimientos.
  * </p>
  * 
  * @author CryptedSec Team
- * @see Patrón DAO
+ * @see Patron DAO
  */
 
 public interface AppDAO {

@@ -4,11 +4,11 @@ import javax.swing.JOptionPane;
 
 /**
  * <h2>VistaVentana</h2>
- * Aquí se crean y configuran las ventanas emergentes.
- * Las hay para mostrar información útil, y para solicitar datos.
- * Se usan al presionar un botón.
+ * Aqui se crean y configuran las ventanas emergentes.
+ * Las hay para mostrar informacion util, y para solicitar datos.
+ * Se usan al presionar un boton.
  * 
- * @author Mauricio Beltrán
+ * @author Mauricio Beltran
  *
  */
 
@@ -18,17 +18,17 @@ public class VistaVentana {//Clase de herramientas JOptionPane
 		
 	}
 	
-	//Método para mostrar ventana emergente de información
+	//Metodo para mostrar ventana emergente de informacion
 	public void mostrarInfo(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Mensaje de información", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
-	//Método para pedir datos tipo String
+	//Metodo para pedir datos tipo String
 	public String leerString(String mensaje) {
 		String dato = null;
 		try {
 			dato = JOptionPane.showInputDialog(mensaje);
-			dato = dato.toLowerCase(); //Para poderlo analizar sin tener en cuenta cómo lo haya escrito el usuario
+			dato = dato.toLowerCase(); //Para poderlo analizar sin tener en cuenta como lo haya escrito el usuario
 		}catch(NullPointerException e) {
 			return dato;
 		}
@@ -39,7 +39,7 @@ public class VistaVentana {//Clase de herramientas JOptionPane
 
 	}
 	
-	//Método para pedir datos tipo int
+	//Metodo para pedir datos tipo int
 	public int leerInt(String mensaje) {
 		String aux = JOptionPane.showInputDialog(mensaje);
 		int dato = Integer.parseInt(aux);

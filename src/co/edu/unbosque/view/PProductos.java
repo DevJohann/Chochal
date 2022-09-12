@@ -7,8 +7,8 @@ import javax.swing.*;
 
 /**
  * <h2>PProductos</h2>
- * En esta clase se encuentra el panel que contiene la información de cantidad de cada producto.
- * Cada label está instanciado en el constructor y configurado en funcionar().
+ * En esta clase se encuentra el panel que contiene la informacion de cantidad de cada producto.
+ * Cada label esta instanciado en el constructor y configurado en funcionar().
  * Todos los labels tienen el mismo estilo.
  * Gracias a los setters y getters se logran modificar los valores de las cantidades, cuando se agrega
  * o elimina un producto.  
@@ -45,7 +45,7 @@ public class PProductos extends JPanel{
 	
 	public void funcionar() {
 		
-		//Título
+		//Titulo
 		LMain.setBounds(90, 20, 400, 30);
 		LMain.setFont(new Font("Serif", Font.BOLD, 24));
 		LMain.setForeground(Color.WHITE);
@@ -89,7 +89,7 @@ public class PProductos extends JPanel{
 		
 	}
 	
-	//Getters y setters de sólo los value
+	//Getters y setters de solo los value
 
 	public int getLFrescosValue() {
 		return Integer.parseInt(LFrescosValue.getText());

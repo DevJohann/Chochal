@@ -11,8 +11,8 @@ import javax.swing.JPanel;
 
 /**
  * <h2>PPublicidad</h2>
- * Información de contacto, las imágenes están almacenadas en la carpeta del proyecto. 
- * @author Mauricio Beltrán
+ * Informacion de contacto, las imagenes estan almacenadas en la carpeta del proyecto. 
+ * @author Mauricio Beltran
  *
  */
 
@@ -22,12 +22,12 @@ public class PPublicidad extends JPanel{
 	private JLabel telefono;
 	private JLabel adicion;
 	
-	//Para poner las imagenes ahí
+	//Para poner las imagenes ahi
 	private JLabel imagenIG;
 	private JLabel imagenTel;
 	private JLabel imagenAdicion;
 
-	//Acá se traen las imagenes 
+	//Aca se traen las imagenes 
 	private ImageIcon IIInstagram;
 	private ImageIcon IITel;
 	private ImageIcon IIAdicion;
