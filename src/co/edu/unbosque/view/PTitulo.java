@@ -8,6 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
+/**
+ * 
+ * @author Mauricio Beltrán
+ *
+ */
+
 public class PTitulo extends JPanel{
 	
 	private JLabel tituloP;

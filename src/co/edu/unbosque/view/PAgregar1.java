@@ -1,5 +1,11 @@
 package co.edu.unbosque.view;
 
+/**
+ * 
+ * @author Mauricio Beltrán
+ *
+ */
+
 import javax.swing.*;
 
 public class PAgregar1 extends JLayeredPane{

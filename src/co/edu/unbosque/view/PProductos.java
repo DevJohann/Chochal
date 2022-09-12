@@ -5,6 +5,18 @@ import java.awt.Font;
 
 import javax.swing.*;
 
+/**
+ * <h2>PProductos</h2>
+ * En esta clase se encuentra el panel que contiene la información de cantidad de cada producto.
+ * Cada label está instanciado en el constructor y configurado en funcionar().
+ * Todos los labels tienen el mismo estilo.
+ * Gracias a los setters y getters se logran modificar los valores de las cantidades, cuando se agrega
+ * o elimina un producto.  
+ * 
+ * @author Mauricio Beltrán
+ *
+ */
+
 public class PProductos extends JPanel{
 
 	private JLabel LMain;

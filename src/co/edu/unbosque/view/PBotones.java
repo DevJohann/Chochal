@@ -2,6 +2,14 @@ package co.edu.unbosque.view;
 
 import javax.swing.*;
 
+/**
+ * <h2>PBotones</h2>
+ * Esta clase es el panel que contiene los botones.
+ * Cada uno de ellos está instanciado y configurado dentro de funcionar(). 
+ * @author CryptedSec Team
+ *
+ */
+
 public class PBotones extends JPanel{
 	
 	private JButton bAgregar;

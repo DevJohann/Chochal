@@ -4,6 +4,13 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 
+/**
+ * <h2>VistaPrincipal</h2>
+ * Este es el JFrame de la aplicación, la base de los paneles.
+ * Aquí se intancian y se configuran los paneles, con sus elementos ya ubicados.
+ * @author Mauricio Beltrán
+ *
+ */
 public class VistaPrincipal extends JFrame{
 	
 	private PTitulo pTitulo;

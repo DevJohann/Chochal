@@ -1,5 +1,11 @@
 package co.edu.unbosque.model;
 
+/**
+ * 
+ * @author CryptedSec Team
+ *
+ */
+
 public class Refrigerado extends Producto{
 	
 	protected String codInvima;

@@ -1,5 +1,11 @@
 package co.edu.unbosque.model;
 
+/**
+ * 
+ * @author CryptedSec Team
+ *
+ */
+
 public class Congelado extends Refrigerado{
 
 	public Congelado(String fechaVencimiento, String lote, String fechaEnvasado, String pais, String codInvima,

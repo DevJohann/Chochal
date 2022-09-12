@@ -2,6 +2,14 @@ package co.edu.unbosque.model;
 
 import java.util.ArrayList;
 
+/**
+ * <h2>DataBase</h2>
+ * La base de datos es un ArrayList que almacena los productos.
+ * Tiene funcionalidades implementadas del AppDAO (Interfaces, abstracción y sobrescritura).
+ * @author CryptedSec Team
+ *
+ */
+
 public class DataBase implements AppDAO{
 	
 	private ArrayList<Producto> DataBase = new ArrayList<>();

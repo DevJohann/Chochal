@@ -2,6 +2,16 @@ package co.edu.unbosque.view;
 
 import javax.swing.JOptionPane;
 
+/**
+ * <h2>VistaVentana</h2>
+ * Aquí se crean y configuran las ventanas emergentes.
+ * Las hay para mostrar información útil, y para solicitar datos.
+ * Se usan al presionar un botón.
+ * 
+ * @author Mauricio Beltrán
+ *
+ */
+
 public class VistaVentana {//Clase de herramientas JOptionPane 
 	
 	public VistaVentana() {

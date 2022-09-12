@@ -1,5 +1,12 @@
 package co.edu.unbosque.model;
 
+/**
+ * <h2>Producto<h2>
+ * Los productos principales heredan de esta clase.
+ * @author CryptedSec Team
+ *
+ */
+
 public class Producto {
 	
 	protected String fechaVencimiento;

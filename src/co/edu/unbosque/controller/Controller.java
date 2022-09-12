@@ -1,6 +1,7 @@
 package co.edu.unbosque.controller;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Locale;
@@ -17,6 +18,24 @@ import co.edu.unbosque.model.Refrigerado;
 import co.edu.unbosque.view.VistaPrincipal;
 import co.edu.unbosque.view.VistaVentana;
 
+/**<h2>Controller</h2>
+ * Esta clase sirve para ser un pasamanos entre el paquete de modelo
+ * (model) y el paquete de vista (view). En esta clase se maneja todo
+ * lo que son los listeners de los botones (del JFrame y de los JPanels)
+ * mediante ActionListener.
+ * 
+ * <b>Notas:</b> Están presentes objetos de las clases: VistaPrincipal
+ * (vistaPrincipal), VistaVentana (VV), DataBase (DB).
+ * Cabe aclarar que la que llamamos DB es una base de datos local y
+ * sencilla que almacena datos en un ArrayList.
+ * VistaPrincipal contiene el JFrame en donde se ubican los demás paneles.
+ * VistaVentana es la clase de donde se coordinan las ventanas emergentes.
+ * 
+ * @author CryptedSec Team
+ * @see ActionListener
+ *
+ */
+
 public class Controller implements ActionListener{
 	
 	VistaPrincipal vistaPrincipal; //JFrame
@@ -24,7 +43,11 @@ public class Controller implements ActionListener{
 	
 	DataBase DB; //Base de datos, donde está el ArrayList que almacena los productos
 	
-	
+	/**
+	 * Usamos el constructor para instanciar las clases que serán
+	 * necesarias para el manejo del GUI y la base de datos.
+	 * 
+	 */
 	
 	public Controller() {
 		vistaPrincipal = new VistaPrincipal();
@@ -34,6 +57,13 @@ public class Controller implements ActionListener{
 		asignarOyentes();
 	}
 	
+	/**
+	 * Este método lo que hace es agregar los ActionListener a cada
+	 * uno de los botones del panel PBotones del paquete vista,
+	 * gracias al objeto de vistaPrincipal.
+	 * 
+	 */
+	
 	public void asignarOyentes() {
 		vistaPrincipal.getpBotones().getbAgregar().addActionListener(this);
 		vistaPrincipal.getpBotones().getbEliminar().addActionListener(this);
@@ -41,6 +71,61 @@ public class Controller implements ActionListener{
 		vistaPrincipal.getpBotones().getbBuscar().addActionListener(this);
 		vistaPrincipal.getpBotones().getbSalir().addActionListener(this);
 	}
+	
+	/**
+	 * actionPerformed
+	 * 
+	 * Sobrescribimos el método actionPerformed que viene de la interfaz
+	 * de ActionListener, dentro del cual se analiza cuál de todos los botones
+	 * fue presionado y así poder mandar a actuar al modelo según sea necesario.
+	 * Es necesario aclarar que cada botón de pBotones tiene un ActionCommand 
+	 * asignado, con lo que nos podemos valer para saber distinguir entre uno
+	 * y otro (e.getActionCommand).
+	 * 
+	 * <b>Notas:</b>
+	 * Usamos el manejo de excepciones para cuando por ejemplo, el usuario decide
+	 * no continuar con el proceso luego de haber presionando un botón, presionando
+	 * cancelar en la ventana emergente.
+	 * Las variables "var_*" son usadas para almacenar los datos recogidos en las 
+	 * ventanas emergentes. 
+	 * Hay switch dentro de otros switch debido a que luego de presionar un botón,
+	 * hay varias opciones disponibles, por ejemplo luego de elegir agregar, debemos
+	 * saber cual producto de los antes mencionados quiere agregar.
+	 * 
+	 * <p><ul>
+	 *	<li>
+	 * Botón agregar:
+	 * En el apartado del botón agregar, para cada uno de los productos, se recogen
+	 * los datos pertinentes para la creación del mismo, se valida que el lote no
+	 * esté repetido, se crea el objeto y se añade a la base de datos, y posteriormente
+	 * se suma 1 al valor que se muestra en la ventana principal (pProductos) del
+	 * respectivo producto.
+	 * </li>
+	 * <li>
+	 * Boton eliminar:
+	 * En el apartado del botón de eliminar, se busca el producto a eliminar mediante
+	 * el lote único, y en tal caso de no encontrarse, se lanza la excepción y se muestra
+	 * el mensaje de error, igual al presionar cancelar o ingresar caracteres no esperados.
+	 * Si el producto existe, se ubicará en la base de datos y se eliminará, gracias a las
+	 * acciones de la base de datos implementadas desde el DAO (Patrón DAO).
+	 * </li>
+	 * <li>
+	 * Botón modificar:
+	 * Se ubicará el producto a buscar, y si existe, se le preguntará por los nuevos datos para
+	 * remplazar, si no, o si se ingresan caracteres no esperados, mostrará que no se encontró
+	 * el producto.
+	 * </li>
+	 * <li>  
+	 * Botón buscar:
+	 * Para buscar un producto se tienen dos opciones, por lote o por fecha de vencimiento. En los
+	 * dos casos, se buscará el producto objetivo en la base de datos, y si existe, se mostrará
+	 * el método toString() del producto. Si no existe (la base de datos retorna null), entonces
+	 * se muestra el mensaje de que no se encontró el producto.
+	 * Para el caso de buscar por fecha de vencimiento, hay la probabilidad de que se encuentre más
+	 * de un producto, para ello se guardan todas las coincidencias que encuentre la base de datos
+	 * en un ArrayList, y posteriormente, mediante un for each, se mostrará el toString() de cada uno.
+	 * </li> 
+	 */
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -193,23 +278,27 @@ public class Controller implements ActionListener{
 		case "Eliminar":
 			String res = VV.leerString("Qué producto desea eliminar (por numero de lote)");
 			String resDB = DB.Eliminar(res);
-			resDB = resDB.toLowerCase();
-			System.out.println(resDB);
-			switch(resDB) {
-			case "congelado", "congeladoagua", "congeladoaire", "congeladonitrogeno":
-				vistaPrincipal.getpProductos().setLCongeladosValue("resta", 1);
-				VV.mostrarInfo("Eliminado correctamente");
-				break;
-			case "fresco":
-				vistaPrincipal.getpProductos().setLFrescosValue("resta", 1);
-				VV.mostrarInfo("Eliminado correctamente");
-				break;
-			case "refrigerado":
-				vistaPrincipal.getpProductos().setLRefrigeradosValue("resta", 1);
-				VV.mostrarInfo("Eliminado correctamente");
+			try {
+				resDB = resDB.toLowerCase();
+				System.out.println(resDB);
+				switch(resDB) {
+				case "congelado", "congeladoagua", "congeladoaire", "congeladonitrogeno":
+					vistaPrincipal.getpProductos().setLCongeladosValue("resta", 1);
+					VV.mostrarInfo("Eliminado correctamente");
+					break;
+				case "fresco":
+					vistaPrincipal.getpProductos().setLFrescosValue("resta", 1);
+					VV.mostrarInfo("Eliminado correctamente");
+					break;
+				case "refrigerado":
+					vistaPrincipal.getpProductos().setLRefrigeradosValue("resta", 1);
+					VV.mostrarInfo("Eliminado correctamente");
+					break;
+				}
+			}catch(NullPointerException ex) {
+				VV.mostrarInfo("Error");
 				break;
 			}
-			
 			break;
 		case "Modificar":
 			String x = VV.leerString("Qué producto desea modificar (por numero de lote)");
